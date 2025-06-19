@@ -75,8 +75,7 @@ private
   end
 
   def example_group_file_executor_for(notification)
-    metadata = notification.example.metadata
-    "#{example_group_file_path_for(example)}[#{example_group_file_scope_for(example)}]"
+    "#{example_group_file_path_for(notification)}[#{example_group_file_scope_for(notification)}]"
   end
 
   def classname_for(notification)
