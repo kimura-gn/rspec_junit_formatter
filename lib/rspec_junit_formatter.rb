@@ -43,7 +43,9 @@ private
       when :failed
         xml_dump_failed(example)
       else
-        xml_dump_example(example)
+        xml_dump_example(example) do
+          xml_dump_props(example)
+        end
       end
     end
   end
@@ -77,6 +79,14 @@ private
     yield if block_given?
     xml_dump_output(example)
     output << %{</testcase>\n}
+  end
+
+  def xml_dump_props(example)
+    output << %{<properties>}
+    output << %{<property name="scoped_id" value="[#{example_group_file_scope_for(example)}]"/>}
+    output << %{<property name="location" value="#{example_group_file_location_for(example)}"/>}
+    output << %{<property name="executor" value="#{example_group_file_executor_for(example)}"/>}
+    output << %{</properties>}
   end
 
   def xml_dump_output(example)

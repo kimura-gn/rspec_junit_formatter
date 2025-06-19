@@ -66,6 +66,19 @@ private
     metadata[:file_path]
   end
 
+  def example_group_file_scope_for(notification)
+    notification.example.metadata[:scoped_id]
+  end
+
+  def example_group_file_location_for(notification)
+    notification.example.metadata[:location]
+  end
+
+  def example_group_file_executor_for(notification)
+    metadata = notification.example.metadata
+    "#{example_group_file_path_for(example)}[#{example_group_file_scope_for(example)}]"
+  end
+
   def classname_for(notification)
     fp = example_group_file_path_for(notification)
     fp.sub(%r{\.[^/]*\Z}, "").gsub("/", ".").gsub(%r{\A\.+|\.+\Z}, "")
