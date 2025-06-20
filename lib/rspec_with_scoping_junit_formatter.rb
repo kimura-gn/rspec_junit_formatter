@@ -8,7 +8,7 @@ require "rspec/core/formatters/base_formatter"
 
 # Dumps rspec results as a JUnit XML file.
 # Based on XML schema: http://windyroad.org/dl/Open%20Source/JUnit.xsd
-class RSpecJUnitFormatter < RSpec::Core::Formatters::BaseFormatter
+class RSpecWithScopingJUnitFormatter < RSpec::Core::Formatters::BaseFormatter
   # rspec 2 and 3 implements are in separate files.
 
 private
