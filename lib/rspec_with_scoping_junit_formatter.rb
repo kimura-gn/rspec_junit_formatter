@@ -83,9 +83,9 @@ private
 
   def xml_dump_props(example)
     output << %{<properties>}
-    output << %{<property name="scoped_id" value="[#{escape(example_group_file_scope_for(example))}]"/>}
-    output << %{<property name="location" value="#{escape(example_group_file_location_for(example))}"/>}
-    output << %{<property name="executor" value="#{escape(example_group_file_executor_for(example))}"/>}
+    output << %{<property name="scoped_id" value="[#{escape(example_group_file_scope_for(example))}]" />}
+    output << %{<property name="location" value="#{escape(example_group_file_location_for(example))}" />}
+    output << %{<property name="executor" value="#{escape(example_group_file_executor_for(example))}" />}
     output << %{</properties>}
   end
 
